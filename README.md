@@ -125,3 +125,26 @@ As the typescript will compile the server file into the my_app/build, we need to
 as our main file (current: server.js, will be changed into server.ts) will be compile to my_app/build/server.js. We should set the target of "main", "test" and "start" to this file. Also notice that as we installed the @types/express for our project, we should see it here.
 
 As we finished all the start for our Node.ts project, it is the time to change our server.js with 'Hello World!' into server.ts
+
+*Run server test*
+As soon as server.js is changed to server.ts, a message in our server.ts file will show to suggest changing require into import from, go ahead to make the change:
+```typescript
+// server.ts
+import express from 'express';
+const app = express();
+const PORT = 3001
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+})
+
+
+app.listen(PORT, () => {
+  console.log(`Port ${PORT} is connected`);
+})
+```
+Then in CLI, run:
+```
+npm start
+```
+As we setup the tsc (typescript compiler) in our package.json, this command will first compile our server.ts into our "outDir": my_app/build/ as server.js. Then server.js will be run.

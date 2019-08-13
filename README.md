@@ -148,3 +148,7 @@ Then in CLI, run:
 npm start
 ```
 As we setup the tsc (typescript compiler) in our package.json, this command will first compile our server.ts into our "outDir": my_app/build/ as server.js. Then server.js will be run.
+
+
+## CRUD and API request with Node.ts
+To be continues!!!
